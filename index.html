@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Word Bank Maker</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="stopword.js"></script>
+    <script src="download.js"></script>
+    <script src="script.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <h1 id="title">Word Bank Maker</h1>
+      </div>
+
+      <div class="row">
+        <form id="pastingWindow">
+          <div>
+            <textarea id="pastedText" placeholder="Please paste some text here" rows="50" cols="100"></textarea>
+          </div>
+          <button type="button" data-target="modal1" id="parseBtn" class= "waves-effect waves-light btn modal-trigger" onclick="parseText()"><i class ="material-icons left">build</i>Make a Word Bank</button>
+        </form>
+
+      <!-- Simple List -->
+        <div id="wordBank"></div>
+      </div>
+  
+      <div class="row">
+        <div id="share">
+          <button type="button" class= "waves-effect waves-light btn" id="printBtn" style="visibility:hidden"  onclick="printButton()"><i class ="material-icons left">print</i>Print</button>
+        </div>
+      </div>
+    
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Word Bank Title</h4>
+          <form>
+            <input id="titleName" class="input-field" placeholder="Enter title for word bank">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" id="closeModalBtn" class="modal-close waves-effect waves-green btn-flat" onclick="wordBankTitleInput()">Close</a>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
